@@ -1,20 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="images/gift.png" type="image/x-icon">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Favicon and stylesheet -->
+  <link rel="shortcut icon" href="images/gift.png" type="image/x-icon" />
+  <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Document Title -->
-  <title>FLOWERS</title>
+  <title>CHRISTMAS</title>
+
+  <!-- Inline CSS for the button styling and positioning -->
+  <style>
+    /* The "Open" button container — position it over the petal */
+    .petal-button-container {
+      position: absolute;
+      top: 50vh; /* Adjust so it lands near your chosen petal */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 999; /* Bring button in front */
+    }
+
+    /* The button (with sparkle SVG) */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      padding: 10px 20px;
+      background: transparent;
+      border-radius: 3em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: linear-gradient(0deg, #edaadf, #f516ee);
+      box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+        inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+        0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+        0px 0px 180px 0px #f516ee;
+      transform: translateY(-2px);
+    }
+
+    .sparkle {
+      fill: transparent;
+      transition: all 0.8s ease;
+    }
+
+    .btn:hover .sparkle {
+      fill: transparent;
+      transform: scale(2.1);
+    }
+
+    .text {
+      font-weight: 600;
+      color: transparent;
+      font-size: 1rem;
+    }
+
+    .btn:hover .text {
+      color: transparent;
+    }
+  </style>
 </head>
 
 <body class="not-loaded">
   <!-- Background -->
   <div class="night"></div>
+
 
   <!-- Flower -->
   <div class="flowers">
@@ -319,6 +374,27 @@
 </body>
 
 </html>
+
+<!-- This container absolutely positions the button over a petal -->
+<div class="petal-button-container">
+  <!-- Link that opens your PDF in a new tab. Replace 'myPdf.pdf' with your path -->
+  <a href="christmas present.pdf" target="_blank" class="btn">
+    <svg
+      height="24"
+      width="24"
+      fill="#FFFFFF"
+      viewBox="0 0 24 24"
+      data-name="Layer 1"
+      id="Layer_1"
+      class="sparkle"
+    >
+      <path
+        d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"
+      ></path>
+    </svg>
+    <span class="text"></span>
+  </a>
+</div>
 
 <!-- Import Javascript -->
 <script src="js/main.js"></script>
