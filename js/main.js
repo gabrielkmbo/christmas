@@ -14,9 +14,7 @@ window.onload = () => {
         setTimeout(appendTitle, 300);
       }
     }
-
     appendTitle();
-
     clearTimeout(c);
   }, 1000);
 
